@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mysql_test:
+    image: mysql:latest
+    volumes:
+      - mysql_test:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_TCP_PORT: 3306
+    ports:
+      - '3306:3306'
+    expose:
+      - 3306
+volumes:
+  mysql_test:

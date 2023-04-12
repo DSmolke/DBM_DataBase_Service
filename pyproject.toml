@@ -8,7 +8,13 @@ packages = [{include = "dbm_database_service"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+mysql-connector-python = "^8.0.32"
+python-dotenv = "^1.0.0"
 
+
+[tool.poetry.group.test.dependencies]
+mysql-connector-python = "^8.0.32"
+python-dotenv = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]
