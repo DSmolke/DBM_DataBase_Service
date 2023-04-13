@@ -5,6 +5,7 @@
 1. Clone repository:
 ```angular2html
     git clone https://github.com/DSmolke/DBM_DataBase_Service.git
+    cd DBM_DataBase_Service
 ```
 2. 
 

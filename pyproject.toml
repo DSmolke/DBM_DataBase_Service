@@ -12,6 +12,7 @@ mysql-connector-python = "^8.0.32"
 python-dotenv = "^1.0.0"
 easyvalid-data-validator = "^0.1.1"
 gdown = "^4.7.1"
+pytest = "^7.3.0"
 
 
 [tool.poetry.group.test.dependencies]
@@ -19,6 +20,7 @@ mysql-connector-python = "^8.0.32"
 python-dotenv = "^1.0.0"
 easyvalid-data-validator = "^0.1.1"
 gdown = "^4.7.1"
+pytest = "^7.3.0"
 
 [build-system]
 requires = ["poetry-core"]
