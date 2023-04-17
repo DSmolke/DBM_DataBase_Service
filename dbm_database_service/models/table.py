@@ -11,6 +11,7 @@ class Table:
     temporary: bool = False
 
     def __str__(self) -> str:
+        """ Will be parsed in other objects. Outcome is valid SQL Create Table expression """
         return f"create{' temporary' if self.temporary else ''} table" \
                f"{' if not exists' if self.if_not_exist else ''}" \
                f" {self.name}(" \
@@ -18,8 +19,10 @@ class Table:
 
 
     def drop_statement(self) -> str:
+        """ Auxiliary method, that returns expression of sql drop table if exist with name stored in instance """
         return f"drop table if exists {self.name}"
 
     def alter_statement(self) -> str:
+        """ Auxiliary method, that returns expression of sql alter table with name stored in instance """
         return f"alter table {self.name}"
 

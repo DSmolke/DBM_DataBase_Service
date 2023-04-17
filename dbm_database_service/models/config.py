@@ -1,4 +1,5 @@
 class Settings:
+    """ Container class used to store settings for some objects in the program """
     valid_mysql_datatypes = [
         'INT', 'SMALLINT', 'TINYINT', 'MEDIUMINT',
         'BIGINT', 'ENUM',
