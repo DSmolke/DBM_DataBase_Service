@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+mysql-connector-python = "*"
+python-dotenv = "*"
+easyvalid-data-validator = "*"
+gdown = "*"
+
+[dev-packages]
+pytest = "*"
+mysql-connector-python = "*"
+python-dotenv = "*"
+easyvalid-data-validator = "*"
+gdown = "*"
+
+[requires]
+python_version = "3.11"
