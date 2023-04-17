@@ -1,8 +1,5 @@
-
 import re
-
 import pytest
-
 from dbm_database_service.models.datatype import DataType
 
 
