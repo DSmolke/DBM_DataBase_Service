@@ -16,3 +16,10 @@ class Table:
                f" {self.name}(" \
                f"{', '.join([str(c) for c in self.columns])});" \
 
+
+    def drop_statement(self) -> str:
+        return f"drop table if exists {self.name}"
+
+    def alter_statement(self) -> str:
+        return f"alter table {self.name}"
+
