@@ -68,6 +68,6 @@ def valid_table_name():
 @pytest.fixture
 def valid_table_columns():
     return [
-        Column('id', DataType('int'), primary_key=True, autoincrement=True),
+        Column('id', DataType('int'), primary_key=True, auto_increment=True),
         Column('name', DataType('varchar', 10))
     ]

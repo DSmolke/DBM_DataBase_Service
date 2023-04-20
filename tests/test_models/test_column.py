@@ -13,7 +13,7 @@ class TestValidColumnCases:
         assert str(Column(name=self.basic_name, datatype=datatype_mock, primary_key=True)) == 'id int primary key'
 
     def test_basic_column_with_autoincrement(self, datatype_mock) -> None:
-        assert str(Column(name=self.basic_name, datatype=datatype_mock, autoincrement=True)) == 'id int autoincrement'
+        assert str(Column(name=self.basic_name, datatype=datatype_mock, auto_increment=True)) == 'id int auto_increment'
 
     def test_basic_column_with_unique(self, datatype_mock) -> None:
         assert str(Column(name=self.basic_name, datatype=datatype_mock, unique=True)) == 'id int unique'
@@ -23,6 +23,9 @@ class TestValidColumnCases:
 
     def test_basic_column_with_not_null(self, datatype_mock) -> None:
         assert str(Column(name=self.basic_name, datatype=datatype_mock, not_null=True)) == 'id int not null'
+
+    def test_basic_column_with_autoincrement_and_primary_key(self, datatype_mock) -> None:
+        assert str(Column(name=self.basic_name, datatype=datatype_mock, primary_key=True, auto_increment=True)) == 'id int primary key auto_increment'
 
 
 class TestInvalidColumnCases:

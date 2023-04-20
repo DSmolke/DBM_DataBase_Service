@@ -2,13 +2,16 @@ import pytest
 import gdown
 import subprocess
 import time
+import logging
 
 from dbm_database_service.connectors import MySQLConnectionPoolBuilder
 
+logging.basicConfig(level=logging.INFO)
 
 @pytest.fixture(autouse=True, scope='session')
 def prepare_test_database():
     """ Fixture that creates mysql container using docker-compose  """
+    logging.info('Creating and setting up database .....')
     cmd = 'docker-compose up -d'
     subprocess.getoutput(cmd)
     # Maximum time needed for docker-compose to build container etc.

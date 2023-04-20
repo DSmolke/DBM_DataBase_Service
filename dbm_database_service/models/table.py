@@ -12,11 +12,7 @@ class Table:
 
     def __str__(self) -> str:
         """ Will be parsed in other objects. Outcome is valid SQL Create Table expression """
-        return f"create{' temporary' if self.temporary else ''} table" \
-               f"{' if not exists' if self.if_not_exist else ''}" \
-               f" {self.name}(" \
-               f"{', '.join([str(c) for c in self.columns])});" \
-
+        return f"create{' temporary' if self.temporary else ''} table{' if not exists' if self.if_not_exist else ''} {self.name}({', '.join([str(c) for c in self.columns])});"
 
     def drop_statement(self) -> str:
         """ Auxiliary method, that returns expression of sql drop table if exist with name stored in instance """

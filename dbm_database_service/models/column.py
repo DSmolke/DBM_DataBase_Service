@@ -12,7 +12,7 @@ class Column:
     name: str
     datatype: DataType
     primary_key: bool = False
-    autoincrement: bool = False
+    auto_increment: bool = False
     unique: bool = False
     default: Any = None
     not_null: bool = False
@@ -23,7 +23,7 @@ class Column:
         constraints = {
             "name": {Constraint.STRING_REGEX: r'^[a-zA-Z_][a-zA-Z0-9_]{1,64}$'},
             "primary_key": {Constraint.IS_TYPE: bool},
-            "autoincrement": {Constraint.IS_TYPE: bool},
+            "auto_increment": {Constraint.IS_TYPE: bool},
             "unique": {Constraint.IS_TYPE: bool},
             "not_null": {Constraint.IS_TYPE: bool}
         }
@@ -33,7 +33,7 @@ class Column:
         """ Will be parsed in other objects. Outcome is valid sql string describing column """
         return f"{self.name} {self.datatype}" \
                f"{' primary key' if self.primary_key else ''}" \
-               f"{' autoincrement' if self.autoincrement else ''}" \
+               f"{' auto_increment' if self.auto_increment else ''}" \
                f"{' unique' if self.unique else ''}" \
                f"{' not null' if self.not_null else ''}" \
                f"{f' default {self.default}' if self.default else ''}"
